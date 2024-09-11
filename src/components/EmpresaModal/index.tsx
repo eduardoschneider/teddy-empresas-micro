@@ -51,7 +51,7 @@ const EmpresaModal: React.FC<EmpresaModal> = ({ isOpen, onRequestClose, refresh,
       companyName: formData.companyName,
       collaboratorsCount: formData.collaboratorsCount,
       isActive: formData.isActive
-    }, refresh());
+    }, refresh);
     onRequestClose();
   };
 
@@ -61,8 +61,8 @@ const EmpresaModal: React.FC<EmpresaModal> = ({ isOpen, onRequestClose, refresh,
       companyName: formData.companyName,
       collaboratorsCount: formData.collaboratorsCount,
       isActive: formData.isActive
-    }, refresh());
-    onRequestClose(true);
+    }, refresh);
+    onRequestClose();
   };
 
   useEffect(() => {

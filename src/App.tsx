@@ -7,7 +7,12 @@ import { Empresa } from 'components/EmpresaModal';
 import { excluir } from 'utils/EmpresasService';
 import './styles.scss';
 
-const App = () => {
+interface EmpresaMicroProps {
+  page: number,
+  setPage: any;
+}
+
+const App: React.FC<EmpresaMicroProps> = ({ page, setPage }) => {
 
   const columns = [
     { Header: 'Nome', accessor: 'name' },
@@ -21,7 +26,7 @@ const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalEditData, setModalEditData] = useState<Empresa | null>(null);
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(page);
   const totalPages = Math.ceil(data.length / 5);
 
   const loadAll = async () => {
@@ -48,6 +53,11 @@ const App = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  }
+
+  const updatePage = (p: number) => {
+    setCurrentPage(p);
+    setPage(p);
   }
 
   const refreshTable = () => {
@@ -82,7 +92,7 @@ const App = () => {
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
-        onPageChange={page => setCurrentPage(page)}
+        onPageChange={page => updatePage(page)}
       />
 
       <EmpresaModal isOpen={isModalOpen} onRequestClose={handleCloseModal} refresh={refreshTable} edit={modalEditData}/>
