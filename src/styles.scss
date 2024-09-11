@@ -1,0 +1,62 @@
+.partner-page {
+    padding: 20px;
+
+    .table-container {
+      min-height: 300px;
+    }
+  
+    .create-button {
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+  
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+  
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+  
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+    }
+  
+    .pagination {
+      margin-top: 20px;
+  
+      .page-button {
+        margin: 0 5px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+  
+        &.active {
+          background-color: #4CAF50;
+          color: white;
+        }
+  
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+  }
